@@ -69,6 +69,13 @@ public class Main {
                         System.out.println("Sắp xếp theo giá bán");
                         Collections.sort(productRepository.productList, ProductRepository::comparebyprince);
                         productRepository.productList.forEach(System.out::print);
+                    case 10:
+                        System.out.println("bán chạy nhất");
+                        int bestsale = sc.nextInt();
+                        sc.nextLine();
+                        productRepository.productList.forEach(System.out::println);;
+
+
                     
 
                     default:

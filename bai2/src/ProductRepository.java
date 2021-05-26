@@ -233,6 +233,13 @@ public class ProductRepository<Product2> {
    public static int comparebyprince(Product o1, Product o2){
        return (int) (o1.getImportPrice() - o2.getImportPrice());
    }
-   
+   public void bestsale(){
+    int bestSale = productList.get(0).getAmount();
+       for( int i = 1; i < productList.size(); i++){
+           if(productList.get(i).getAmountSale() > bestSale){
+            bestSale = productList.get(i).getAmountSale();
+           }
+       }
+   }
     
 }

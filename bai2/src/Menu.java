@@ -9,6 +9,7 @@ public class Menu {
         System.out.println("7: Xóa sản phẩm");
         System.out.println("8: Sắp xếp sản phẩm theo tên");
         System.out.println("9: Sắp xếp theo giá bán");
+        System.out.println("10: Sản phẩm bán chạy nhất");
     }
 
     public static void chooseCategory(){
