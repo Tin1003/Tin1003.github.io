@@ -19,7 +19,7 @@ public class StoreService {
     private String path;
         public void uploadFile(MultipartFile file){
             if( file.isEmpty()){
-                throw new StorageException(" thất bại lưu vào file trống");
+                throw new StorageException(" thất bại lưu vào file tron");
             }
             String filename = file.getOriginalFilename();
             try {
