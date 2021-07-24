@@ -1,15 +1,15 @@
-# Lession 10: Upload file
+ # Lession 10: Upload file
 
 ### 1. Homepage:
-![alt text](screenshots/Capture.png)
+![alt text](screenshots/people-list.png)
 ### 2. Add person:
-![alt text](screenshots/Capture5.png)
+![alt text](screenshots/person-add.png)
 ### 3. Edit person:
-![alt text](screenshots/Capture2.png)
+![alt text](screenshots/person-edit.png)
 ### 4. Delete person:
-![alt text](screenshots/Capture3.png)
+![alt text](screenshots/person-delete.png)
 ### 5. Add jobs
-![alt text](screenshots/Capture5.png)
+![alt text](screenshots/job-add.png)
 
 
 
