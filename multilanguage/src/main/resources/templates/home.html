@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head th:replace="template.html :: header('Upload file')">
+</head>
+
+<body>
+  <nav class="navbar navbar-expand-sm navbar-dark bg-dark static-top">
+    <div class="container">
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav">
+          <li class="nav-item">
+            <a class="nav-link active" aria-current="page" href="#" th:text="#{home}">Home</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#" th:text="#{list.person}">List Person</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#" th:text="#{list.job}">List Job</a>
+          </li>
+        </ul>
+      </div>
+      <ul class="navbar-nav d-flex">
+        <li class="nav-item">
+          <a class="nav-link" th:href="@{/?lang=en}" th:text="#{en}">English</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" th:href="@{/?lang=vn}" th:text="#{vn}">Vietnamese</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" th:href="@{/?lang=jp}" th:text="#{jp}">Japanese</a>
+        </li>  
+       
+      </ul>
+    </div>
+  </nav>
+
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-8 mt-5">
+        <form action="#" th:action="@{/}" method="post" name="person" enctype="multipart/form-data"
+          th:object="${person}">
+          <div class="form-group row mt-3">
+            <label for="name" class="col-sm-3 col-form-label" th:text="#{name}">Full Name</label>
+            
+                <input type="text" placeholder="Enter Full Name" class="form-control" id="name" autocomplete="off" th:field="*{name}" />
+       
+            <div class="text-danger" th:if="${#fields.hasErrors('name')}" th:errors="*{name}">Name Error</div>
+          </div>
+
+					<div class="form-group row mt-3">
+						<label for="birthday" class="col-sm-3 col-form-label" th:text="#{birthday}">Birthday</label> 
+            <input type="text" placeholder="Enter Birthday" class="form-control" id="birthday" autocomplete="off" th:field="*{birthDay}"/>
+					</div>
+          <div class="text-danger"  th:if="${#fields.hasErrors('birthDay')}" th:errors="*{birthDay}">BirthDay Error</div>
+          <div class="form-group row mt-3">
+						<label for="gender" class="col-sm-3 col-form-label" th:text="#{gender}">Gender</label>
+						<div class="radio">
+							<!--value = 1 => male| 0 =>female -->
+							<label class="checkbox-inline" > <input type="radio"
+								name="gender" value="1" id="gender1" th:text = "#{male}">
+							</label> 
+              <label class="checkbox-inline" > <input type="radio"
+								name="gender" checked="checked" value="0" id="gender2" th:text = "#{female}">
+							</label>
+						</div>
+					</div>
+					<div class="form-group row mt-3">
+						<label th:text = "#{choose.job}">Choose Job</label>
+						<select class="form-control" id="departId" name="departId">
+							<option value="Developer" th:text = "#{developer}">Developer</option>
+							<option value="Tester" th:text = "#{tester}">Tester</option>
+							<option value="Tester" th:text = "#{doctor}">Doctor</option>
+          </select>
+          </div>
+            <div class="form-group row mt-3">
+              <label th:text = "#{choose.photo}"> Choose Photo</label>
+              <input type="file" class="form-control" name="photo"
+                placeholder="Choose photo"id="photo"/>
+            </div>
+            <div class="text-danger"  th:if="${#fields.hasErrors('photo')}" th:errors="*{photo}">Upload Error</div>
+           </br>       
+          <button class="btn btn-primary" type="submit" th:text="#{submit}">Submit </button>
+        </form>
+      </div>
+    </div>
+</body>
+
+</html>
