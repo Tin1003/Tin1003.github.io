@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Title</title>
+  </head>
+  <body>
+    <form
+      method="post"
+      th:action="@{/calculate/math}"
+      th:object="${calculate}"
+      style="text-align: center"
+    >
+      <div style="text-align: center">
+        <h1>Tính tổng</h1>
+
+        <input
+          type="text"
+          name="x"
+          placeholder = " nhập số x"
+          th:field="*{x}"
+        /><br /><br />
+
+        <input
+          type="text"
+          name="y"
+          placeholder="nhập số y"
+          th:field="*{y}"
+        /><br /><br />
+        <input type="submit" value="Add" />
+      </div>
+      <br />
+      <div>
+        Kết Quả = 
+        <td th:text="${response?.sum}"></td>
+      </div>
+    </form>
+  </body>
+</html>
